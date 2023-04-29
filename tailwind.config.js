@@ -11,8 +11,8 @@ module.exports = {
                 'plt-white': '#EAF2F0',
             },
             fontFamily: {
-                dflt_regular: 'Rufina_400Regular',
-                dflt_semibold: 'Rufina_600SemiBold',
+                'dflt-regular': 'Rufina_400Regular',
+                'dflt-bold': 'Rufina_700Bold',
             },
         },
     },
