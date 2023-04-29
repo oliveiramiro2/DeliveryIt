@@ -1,14 +1,19 @@
 import { NavigationContainer } from '@react-navigation/native';
-import { View } from 'react-native';
+import { Platform, SafeAreaView } from 'react-native';
+import clsx from 'clsx';
 
 import RoutesPublicDeliveryIt from './public';
 
 const RoutesDeliveryIt = () => (
-    <View className="flex-1 bg-black">
+    <SafeAreaView
+        className={clsx('bg-black flex-1', {
+            'pt-8': Platform.OS === 'android',
+        })}
+    >
         <NavigationContainer>
             <RoutesPublicDeliveryIt />
         </NavigationContainer>
-    </View>
+    </SafeAreaView>
 );
 
 export default RoutesDeliveryIt;
