@@ -10,6 +10,10 @@ module.exports = {
                 'plt-orange': '#EB5432',
                 'plt-white': '#EAF2F0',
             },
+            fontFamily: {
+                dflt_regular: 'Rufina_400Regular',
+                dflt_semibold: 'Rufina_600SemiBold',
+            },
         },
     },
     plugins: [],
