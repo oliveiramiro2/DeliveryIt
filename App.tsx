@@ -1,10 +1,11 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, StatusBar } from 'react-native';
 import {
     useFonts,
     Rufina_400Regular,
     Rufina_700Bold,
 } from '@expo-google-fonts/rufina';
+import RoutesDeliveryIt from './src/routes';
 
 const App: React.FC = () => {
     const [fontsLoaded] = useFonts({
@@ -21,14 +22,14 @@ const App: React.FC = () => {
     }
 
     return (
-        <View className="bg-black flex-1 items-center justify-center">
-            <Text className="text-plt-orange dflt-regular">
-                Open up App.tsx to start working on your app!
-            </Text>
-            <Text className="text-plt-orange font-dflt-bold">
-                Open up App.tsx to start working on your app!
-            </Text>
-        </View>
+        <>
+            <RoutesDeliveryIt />
+            <StatusBar
+                barStyle="light-content"
+                backgroundColor="transparent"
+                translucent
+            />
+        </>
     );
 };
 
