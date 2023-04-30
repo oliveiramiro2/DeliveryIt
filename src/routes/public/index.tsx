@@ -3,13 +3,13 @@ import { Ionicons } from '@expo/vector-icons';
 
 import { Home } from '../../pages';
 import { ITabPublicNavigator } from './@types/publicRoutes';
+import { LogoHeader } from '../../components';
 
 const Tab = createBottomTabNavigator<ITabPublicNavigator>();
 
 const RoutesPublicDeliveryIt = () => (
     <Tab.Navigator
         screenOptions={{
-            headerShown: false,
             tabBarHideOnKeyboard: true,
             tabBarShowLabel: false,
             tabBarActiveTintColor: '#190506',
@@ -20,6 +20,14 @@ const RoutesPublicDeliveryIt = () => (
                 borderTopColor: '#0A71B6',
                 borderBottomColor: '#EAF2F0',
             },
+            headerStyle: {
+                borderBottomWidth: 2,
+                borderBottomColor: '#0A71B6',
+                borderBottomLeftRadius: 5,
+                borderBottomRightRadius: 5
+            },
+            headerRight: () => <LogoHeader />,
+            headerTitle: '',
         }}
     >
         <Tab.Screen
