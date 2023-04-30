@@ -2,7 +2,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
 
 import { Home } from '../../pages';
-import { ITabPublicNavigator } from './@types/publicRoutes';
+import { ITabPublicNavigator } from './@types';
 import { LogoHeader } from '../../components';
 
 const Tab = createBottomTabNavigator<ITabPublicNavigator>();
@@ -24,7 +24,7 @@ const RoutesPublicDeliveryIt = () => (
                 borderBottomWidth: 2,
                 borderBottomColor: '#0A71B6',
                 borderBottomLeftRadius: 5,
-                borderBottomRightRadius: 5
+                borderBottomRightRadius: 5,
             },
             headerRight: () => <LogoHeader />,
             headerTitle: '',
