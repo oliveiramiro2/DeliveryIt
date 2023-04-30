@@ -9,7 +9,7 @@ export const LogoHeader: React.FC = () => {
     const { handleAnimation } = useAnimation();
 
     return (
-        <View className="pr-2">
+        <View>
             <MotiImage
                 source={logo}
                 className="h-16 w-16"
