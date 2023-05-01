@@ -1,2 +1,2 @@
-export { LogoHeader } from './logoHeader';
-export { ContainPages } from './containPages';
+export { LogoHeader } from './logoHeader/logoHeader';
+export { ContainPages } from './containPage/containPages';

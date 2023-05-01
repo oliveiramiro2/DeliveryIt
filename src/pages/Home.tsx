@@ -1,9 +1,10 @@
 import React from 'react';
-import { Image, Text, View, Pressable } from 'react-native';
+import { Image, Text, View, Pressable, FlatList } from 'react-native';
 import { MotiView, MotiText } from 'moti';
 
 import { ContainPages } from '../components';
 import promotion from '../assets/imgs/off.png';
+import { categoriesData } from '../constants';
 
 export const Home: React.FC = () => (
     <ContainPages>
@@ -15,6 +16,13 @@ export const Home: React.FC = () => (
             >
                 Bem vindo ao Delivery It!
             </MotiText>
+            <View>
+                <FlatList
+                    data={categoriesData}
+                    keyExtractor={(item) => String(item.id)}
+                    ListEmptyComponent={() => <Text>Carregando...</Text>}
+                />
+            </View>
             <MotiView
                 className="w-full"
                 from={{ opacity: 0, rotateY: '180deg' }}
