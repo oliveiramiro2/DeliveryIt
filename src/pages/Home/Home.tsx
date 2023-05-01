@@ -11,7 +11,7 @@ import { MotiView } from 'moti';
 import { CaregoriesItem, ContainPages } from '../../components';
 import promotion from '../../assets/imgs/off.png';
 import { categoriesData } from '../../constants';
-import { RegisterHome } from './components';
+import { RedirectRegisterLogin } from './components';
 
 export const Home: React.FC = () => (
     <ContainPages>
@@ -53,7 +53,7 @@ export const Home: React.FC = () => (
                     />
                 </Pressable>
             </MotiView>
-            <RegisterHome />
+            <RedirectRegisterLogin />
         </View>
     </ContainPages>
 );
