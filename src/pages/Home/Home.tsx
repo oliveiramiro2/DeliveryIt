@@ -8,10 +8,10 @@ import {
 } from 'react-native';
 import { MotiView } from 'moti';
 
-import { CaregoriesItem, ContainPages } from '../../components';
+import { ContainPages } from '../../components';
 import promotion from '../../assets/imgs/off.png';
 import { categoriesData } from '../../constants';
-import { RedirectRegisterLogin } from './components';
+import { RedirectRegisterLogin, CaregoriesItem } from './components';
 
 export const Home: React.FC = () => (
     <ContainPages>
