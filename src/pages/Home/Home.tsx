@@ -2,9 +2,9 @@ import React from 'react';
 import { Image, Text, View, Pressable, FlatList } from 'react-native';
 import { MotiView, MotiText } from 'moti';
 
-import { ContainPages } from '../components';
-import promotion from '../assets/imgs/off.png';
-import { categoriesData } from '../constants';
+import { ContainPages } from '../../components';
+import promotion from '../../assets/imgs/off.png';
+import { categoriesData } from '../../constants';
 
 export const Home: React.FC = () => (
     <ContainPages>
@@ -16,11 +16,16 @@ export const Home: React.FC = () => (
             >
                 Bem vindo ao Delivery It!
             </MotiText>
-            <View>
+            <View className="bg-plt-black h-20 w-full mt-5">
+                <Text className="text-plt-white font-dflt-regular text-2xl mb-3">
+                    Principais categorias
+                </Text>
                 <FlatList
                     data={categoriesData}
                     keyExtractor={(item) => String(item.id)}
                     ListEmptyComponent={() => <Text>Carregando...</Text>}
+                    renderItem={() => <Text className="text-white">aaaa</Text>}
+                    horizontal
                 />
             </View>
             <MotiView
