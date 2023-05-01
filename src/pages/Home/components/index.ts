@@ -1,1 +1,1 @@
-export { RegisterHome } from './register/register';
+export { RedirectRegisterLogin } from './redirectRegisterLogin/redirectRegisterLogin';
