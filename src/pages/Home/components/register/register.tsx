@@ -15,7 +15,7 @@ export const RegisterHome: React.FC = () => (
         </Text>
         <TouchableOpacity className="bg-plt-blue py-2 items-center rounded-lg mt-3">
             <Text className="text-plt-white font-dflt-regular text-lg">
-                Cadastrar
+                Faça seu cadastro
             </Text>
         </TouchableOpacity>
     </View>
