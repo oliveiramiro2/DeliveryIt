@@ -2,7 +2,7 @@ import { View, Text, TouchableOpacity } from 'react-native';
 import React from 'react';
 
 export const RegisterHome: React.FC = () => (
-    <View className="my-5">
+    <View className="w-full my-5 pt-5 border-t border-plt-yellow">
         <Text className="text-plt-white text-center mb-2 font-dflt-regular text-2xl">
             Faça seu cadastro!!
         </Text>
