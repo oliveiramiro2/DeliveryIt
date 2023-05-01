@@ -8,8 +8,8 @@ export const CaregoriesItem: React.FC<{ data: ICategoriesData }> = ({
     data,
 }) => (
     <MotiPressable
-        from={{ opacity: 0, rotateX: '180deg' }}
-        animate={{ opacity: 1, rotateX: '0deg' }}
+        from={{ opacity: 0, scaleY: 0 }}
+        animate={{ opacity: 1, scaleY: 1 }}
         transition={{
             delay: 300 * data.id,
             type: 'timing',
