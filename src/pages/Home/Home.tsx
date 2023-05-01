@@ -1,22 +1,18 @@
 import React from 'react';
 import { Image, Text, View, Pressable, FlatList } from 'react-native';
-import { MotiView, MotiText } from 'moti';
+import { MotiView } from 'moti';
 
-import { ContainPages } from '../../components';
+import { CaregoriesItem, ContainPages } from '../../components';
 import promotion from '../../assets/imgs/off.png';
 import { categoriesData } from '../../constants';
 
 export const Home: React.FC = () => (
     <ContainPages>
         <View className="flex items-center">
-            <MotiText
-                from={{ bottom: 50, opacity: 0, scaleY: 0 }}
-                animate={{ bottom: 0, opacity: 1, scaleY: 1.5 }}
-                className="text-plt-yellow font-dflt-bold text-2xl"
-            >
+            <Text className="text-plt-yellow font-dflt-bold text-2xl">
                 Bem vindo ao Delivery It!
-            </MotiText>
-            <View className="bg-plt-black h-20 w-full mt-5">
+            </Text>
+            <View className="bg-plt-black w-full mt-5">
                 <Text className="text-plt-white font-dflt-regular text-2xl mb-3">
                     Principais categorias
                 </Text>
@@ -24,8 +20,14 @@ export const Home: React.FC = () => (
                     data={categoriesData}
                     keyExtractor={(item) => String(item.id)}
                     ListEmptyComponent={() => <Text>Carregando...</Text>}
-                    renderItem={() => <Text className="text-white">aaaa</Text>}
+                    renderItem={({ item }) => <CaregoriesItem data={item} />}
                     horizontal
+                    contentContainerStyle={{
+                        display: 'flex',
+                        columnGap: 50,
+                        marginRight: 50,
+                    }}
+                    style={{ display: 'flex', columnGap: 50 }}
                 />
             </View>
             <MotiView
