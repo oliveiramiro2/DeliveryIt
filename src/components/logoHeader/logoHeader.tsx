@@ -2,7 +2,7 @@ import React from 'react';
 import { View } from 'react-native';
 import { MotiImage } from 'moti';
 
-import logo from '../assets/imgs/logo.png';
+import logo from '../../assets/imgs/logo.png';
 import { useAnimation } from './hooks';
 
 export const LogoHeader: React.FC = () => {
