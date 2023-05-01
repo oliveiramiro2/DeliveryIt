@@ -1,11 +1,5 @@
 import React from 'react';
-import {
-    Image,
-    Text,
-    View,
-    Pressable,
-    FlatList,
-} from 'react-native';
+import { Image, Text, View, Pressable, FlatList } from 'react-native';
 import { MotiView } from 'moti';
 
 import { ContainPages } from '../../components';
@@ -28,12 +22,13 @@ export const Home: React.FC = () => (
                     ListEmptyComponent={() => <Text>Carregando...</Text>}
                     renderItem={({ item }) => <CaregoriesItem data={item} />}
                     horizontal
-                    contentContainerStyle={{
-                        display: 'flex',
-                        columnGap: 50,
-                        marginRight: 50,
+                    style={{
+                        borderBottomWidth: 1,
+                        borderTopWidth: 1,
+                        borderBottomColor: '#EAF2F0',
+                        borderTopColor: '#EAF2F0',
+                        paddingBottom: 8
                     }}
-                    style={{ display: 'flex', columnGap: 50 }}
                 />
             </View>
             <MotiView
@@ -41,7 +36,7 @@ export const Home: React.FC = () => (
                 from={{ opacity: 0, rotateY: '180deg' }}
                 animate={{ opacity: 1, rotateY: '0deg' }}
             >
-                <Pressable className="bg-plt-white w-full h-[48vh] mt-7 rounded-lg flex items-center justify-center border-2 border-plt-yellow">
+                <Pressable className="bg-plt-white w-full h-[48vh] mt-7 mb-2 rounded-lg flex items-center justify-center border-2 border-plt-yellow">
                     <Text className="text-plt-orange font-dflt-bold text-2xl mb-3">
                         Promoções
                     </Text>
