@@ -9,8 +9,7 @@ import {
 import { MotiView } from 'moti';
 
 import { ContainPages } from '../../components';
-import promotion from '../../assets/imgs/off.png';
-import { categoriesData } from '../../constants';
+import { categoriesData, promotion } from '../../constants';
 import { RedirectRegisterLogin, CaregoriesItem } from './components';
 
 export const Home: React.FC = () => (
