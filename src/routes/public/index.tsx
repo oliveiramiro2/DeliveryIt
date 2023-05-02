@@ -1,7 +1,7 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Ionicons } from '@expo/vector-icons';
+import { AntDesign, FontAwesome, Ionicons } from '@expo/vector-icons';
 
-import { Home, SignIn } from '../../pages/public';
+import { Home, SignIn, SignUp } from '../../pages/public';
 import { ITabPublicNavigator } from './@types';
 import { LogoHeader } from '../../components';
 
@@ -65,6 +65,27 @@ const RoutesPublicDeliveryIt = () => (
                     return (
                         <Ionicons
                             name="log-in-outline"
+                            color={color}
+                            size={size}
+                        />
+                    );
+                },
+            }}
+        />
+        <Tab.Screen
+            name="SignUpTab"
+            component={SignUp}
+            options={{
+                tabBarIcon: ({ color, focused, size }) => {
+                    if (focused) {
+                        return (
+                            <FontAwesome name="user-plus" color="#0A71B6" size={size} />
+                        );
+                    }
+
+                    return (
+                        <AntDesign
+                            name="adduser"
                             color={color}
                             size={size}
                         />
