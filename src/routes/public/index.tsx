@@ -1,7 +1,7 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
 
-import { Home } from '../../pages/public';
+import { Home, SignIn } from '../../pages/public';
 import { ITabPublicNavigator } from './@types';
 import { LogoHeader } from '../../components';
 
@@ -44,6 +44,27 @@ const RoutesPublicDeliveryIt = () => (
                     return (
                         <Ionicons
                             name="home-outline"
+                            color={color}
+                            size={size}
+                        />
+                    );
+                },
+            }}
+        />
+        <Tab.Screen
+            name="SignInTab"
+            component={SignIn}
+            options={{
+                tabBarIcon: ({ color, focused, size }) => {
+                    if (focused) {
+                        return (
+                            <Ionicons name="log-in" color="#0A71B6" size={size} />
+                        );
+                    }
+
+                    return (
+                        <Ionicons
+                            name="log-in-outline"
                             color={color}
                             size={size}
                         />
