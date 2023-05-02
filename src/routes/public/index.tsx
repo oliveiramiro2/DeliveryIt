@@ -1,7 +1,7 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
 
-import { Home } from '../../pages';
+import { Home } from '../../pages/public';
 import { ITabPublicNavigator } from './@types';
 import { LogoHeader } from '../../components';
 

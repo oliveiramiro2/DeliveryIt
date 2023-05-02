@@ -2,8 +2,8 @@ import React from 'react';
 import { Image, Text, View, Pressable, FlatList } from 'react-native';
 import { MotiView } from 'moti';
 
-import { ContainPages } from '../../components';
-import { categoriesData, promotion } from '../../constants';
+import { ContainPages } from '../../../components';
+import { categoriesData, promotion } from '../../../constants';
 import { RedirectRegisterLogin, CaregoriesItem } from './components';
 
 export const Home: React.FC = () => (
@@ -27,7 +27,7 @@ export const Home: React.FC = () => (
                         borderTopWidth: 1,
                         borderBottomColor: '#EAF2F0',
                         borderTopColor: '#EAF2F0',
-                        paddingBottom: 8
+                        paddingBottom: 8,
                     }}
                 />
             </View>

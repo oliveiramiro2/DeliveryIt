@@ -2,7 +2,7 @@ import React from 'react';
 import { MotiPressable } from 'moti/interactions';
 import { Text, Image } from 'react-native';
 
-import { ICategoriesData } from '../../../../@types';
+import { ICategoriesData } from '../../../../../@types';
 
 export const CaregoriesItem: React.FC<{ data: ICategoriesData }> = ({
     data,
