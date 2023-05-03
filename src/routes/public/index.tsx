@@ -1,9 +1,10 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { AntDesign, FontAwesome, Ionicons } from '@expo/vector-icons';
 
-import { Home, SignIn, SignUp } from '../../pages/public';
+import { Home, SignIn } from '../../pages/public';
 import { ITabPublicNavigator } from './@types';
 import { LogoHeader } from '../../components';
+import { StackSignUp } from './stacks';
 
 const Tab = createBottomTabNavigator<ITabPublicNavigator>();
 
@@ -74,7 +75,7 @@ const RoutesPublicDeliveryIt = () => (
         />
         <Tab.Screen
             name="SignUpTab"
-            component={SignUp}
+            component={StackSignUp}
             options={{
                 tabBarIcon: ({ color, focused, size }) => {
                     if (focused) {
