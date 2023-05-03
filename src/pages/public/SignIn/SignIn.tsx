@@ -8,7 +8,7 @@ import { useLogin, useShowPassword } from './hooks';
 
 export const SignIn: React.FC = () => {
     const { handleShowPassword, showPassword } = useShowPassword();
-    const { control } = useLogin();
+    const { control, errors } = useLogin();
 
     return (
         <ContainPages>
@@ -31,14 +31,19 @@ export const SignIn: React.FC = () => {
                             name="email"
                             render={({ field: { onChange, value } }) => (
                                 <Input
-                                    className="bg-plt-white w-5/6 mb-6 rounded-md pl-2 font-dflt-regular"
+                                    className="bg-plt-white border border-plt-yellow w-5/6 rounded-md pl-2 text-black font-dflt-bold"
                                     placeholder="email@email.com"
                                     value={value}
                                     onChangeText={onChange}
                                 />
                             )}
                         />
-                        <Text className="text-plt-white text-lg mb-1 self-start ml-10 font-dflt-regular">
+                        {errors.email && (
+                            <Text className="text-plt-orange mt-1 self-start ml-10 font-dflt-regular">
+                                {`${errors.email?.message}`}
+                            </Text>
+                        )}
+                        <Text className="text-plt-white text-lg mb-1 mt-4 self-start ml-10 font-dflt-regular">
                             Senha
                         </Text>
                         <Controller
@@ -46,7 +51,7 @@ export const SignIn: React.FC = () => {
                             name="password"
                             render={({ field: { onChange, value } }) => (
                                 <Input
-                                    className="bg-plt-white w-5/6 rounded-md pl-2 font-dflt-regular"
+                                    className="bg-plt-white border border-plt-yellow w-5/6 rounded-md pl-2 text-black font-dflt-bold"
                                     placeholder="Senha"
                                     secureTextEntry={!showPassword}
                                     value={value}
@@ -54,7 +59,7 @@ export const SignIn: React.FC = () => {
                                 />
                             )}
                         />
-                        <View className="relative left-[37%] bottom-6">
+                        <View className="relative left-[36%] bottom-[26px]">
                             <Pressable onPress={handleShowPassword}>
                                 <FontAwesome5
                                     name={showPassword ? 'eye-slash' : 'eye'}
@@ -62,6 +67,11 @@ export const SignIn: React.FC = () => {
                                 />
                             </Pressable>
                         </View>
+                        {errors.password && (
+                            <Text className="text-plt-orange mt-1 self-start ml-10 font-dflt-regular relative bottom-6">
+                                {`${errors.password?.message}`}
+                            </Text>
+                        )}
                     </View>
                     <TouchableOpacity className="bg-plt-blue w-full rounded-lg py-1 items-center">
                         <Text className="text-plt-white font-semibold font-dflt-regular text-lg">
