@@ -1,12 +1,14 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, Pressable } from 'react-native';
 import { FontAwesome, FontAwesome5 } from '@expo/vector-icons';
+import { Controller } from 'react-hook-form';
 
 import { ContainPages, Input } from '../../../components';
-import { useShowPassword } from './hooks';
+import { useLogin, useShowPassword } from './hooks';
 
 export const SignIn: React.FC = () => {
     const { handleShowPassword, showPassword } = useShowPassword();
+    const { control } = useLogin();
 
     return (
         <ContainPages>
@@ -24,21 +26,33 @@ export const SignIn: React.FC = () => {
                         <Text className="text-plt-white text-lg mb-1 self-start ml-10 font-dflt-regular">
                             E-mail
                         </Text>
-                        <Input
-                            className="bg-plt-white w-5/6 mb-6 rounded-md pl-2 font-dflt-regular"
-                            placeholder="email@email.com"
-                            value=""
-                            onChangeText={() => console.log('')}
+                        <Controller
+                            control={control}
+                            name="email"
+                            render={({ field: { onChange, value } }) => (
+                                <Input
+                                    className="bg-plt-white w-5/6 mb-6 rounded-md pl-2 font-dflt-regular"
+                                    placeholder="email@email.com"
+                                    value={value}
+                                    onChangeText={onChange}
+                                />
+                            )}
                         />
                         <Text className="text-plt-white text-lg mb-1 self-start ml-10 font-dflt-regular">
                             Senha
                         </Text>
-                        <Input
-                            className="bg-plt-white w-5/6 rounded-md pl-2 font-dflt-regular"
-                            placeholder="Senha"
-                            secureTextEntry={!showPassword}
-                            value=""
-                            onChangeText={() => console.log('')}
+                        <Controller
+                            control={control}
+                            name="password"
+                            render={({ field: { onChange, value } }) => (
+                                <Input
+                                    className="bg-plt-white w-5/6 rounded-md pl-2 font-dflt-regular"
+                                    placeholder="Senha"
+                                    secureTextEntry={!showPassword}
+                                    value={value}
+                                    onChangeText={onChange}
+                                />
+                            )}
                         />
                         <View className="relative left-[37%] bottom-6">
                             <Pressable onPress={handleShowPassword}>
