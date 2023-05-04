@@ -1,5 +1,7 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { AntDesign, FontAwesome, Ionicons } from '@expo/vector-icons';
+import { View } from 'react-native';
+import { MotiView } from 'moti';
 
 import { Home, SignIn } from '../../pages/public';
 import { ITabPublicNavigator } from './@types';
@@ -21,14 +23,16 @@ const RoutesPublicDeliveryIt = () => (
                 borderTopColor: '#0A71B6',
                 borderBottomColor: '#EAF2F0',
             },
-            headerStyle: {
-                borderBottomWidth: 2,
-                borderBottomColor: '#0A71B6',
-                borderBottomLeftRadius: 5,
-                borderBottomRightRadius: 5,
-            },
-            headerRight: () => <LogoHeader />,
-            headerTitle: '',
+            header: () => (
+                <MotiView
+                    from={{ height: 0 }}
+                    animate={{ height: 60 }}
+                    className="flex flex-row justify-between"
+                >
+                    <View />
+                    <LogoHeader />
+                </MotiView>
+            ),
         }}
     >
         <Tab.Screen
@@ -59,7 +63,11 @@ const RoutesPublicDeliveryIt = () => (
                 tabBarIcon: ({ color, focused, size }) => {
                     if (focused) {
                         return (
-                            <Ionicons name="log-in" color="#0A71B6" size={size} />
+                            <Ionicons
+                                name="log-in"
+                                color="#0A71B6"
+                                size={size}
+                            />
                         );
                     }
 
@@ -80,18 +88,19 @@ const RoutesPublicDeliveryIt = () => (
                 tabBarIcon: ({ color, focused, size }) => {
                     if (focused) {
                         return (
-                            <FontAwesome name="user-plus" color="#0A71B6" size={size} />
+                            <FontAwesome
+                                name="user-plus"
+                                color="#0A71B6"
+                                size={size}
+                            />
                         );
                     }
 
                     return (
-                        <AntDesign
-                            name="adduser"
-                            color={color}
-                            size={size}
-                        />
+                        <AntDesign name="adduser" color={color} size={size} />
                     );
                 },
+                headerShown: false,
             }}
         />
     </Tab.Navigator>
