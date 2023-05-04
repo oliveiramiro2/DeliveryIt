@@ -2,11 +2,12 @@ import React from 'react';
 import { View } from 'react-native';
 import { MotiImage } from 'moti';
 
-import logo from '../../assets/imgs/logo.png';
+import { logo } from '../../constants';
 import { useAnimation } from './hooks';
 
-export const LogoHeader: React.FC = () => {
-    const { handleAnimation } = useAnimation();
+/* eslint-disable-next-line */
+export const LogoHeader: React.FC<{ time?: number }> = ({ time = 0 }) => {
+    const { handleAnimation } = useAnimation(time);
 
     return (
         <View>
@@ -14,7 +15,7 @@ export const LogoHeader: React.FC = () => {
                 source={logo}
                 className="h-16 w-16"
                 resizeMode="contain"
-                from={{ opacity: 0, scale: 0, backgroundColor: '#000' }}
+                from={{ opacity: 0, scale: 0, backgroundColor: '#00000090' }}
                 animate={handleAnimation}
                 transition={{
                     delay: 300,
