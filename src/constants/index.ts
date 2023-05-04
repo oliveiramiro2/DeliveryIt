@@ -1,2 +1,2 @@
 export { categoriesData } from './categories';
-export { promotion } from './images';
+export { promotion, logo } from './images';
