@@ -27,6 +27,7 @@ const RoutesPublicDeliveryIt = () => (
                 <MotiView
                     from={{ height: 0 }}
                     animate={{ height: 60 }}
+                    delay={200}
                     className="flex flex-row justify-between"
                 >
                     <View />
