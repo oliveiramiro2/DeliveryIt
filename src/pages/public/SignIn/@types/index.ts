@@ -1,1 +1,1 @@
-export type { formLoginProps } from './login';
+export type { formLoginProps, IDataLogin } from './login';
