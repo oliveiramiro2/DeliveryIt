@@ -1,15 +1,24 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, Pressable } from 'react-native';
+import {
+    View,
+    Text,
+    TouchableOpacity,
+    Pressable,
+    Alert,
+    ActivityIndicator,
+} from 'react-native';
 import { FontAwesome, FontAwesome5 } from '@expo/vector-icons';
 import { Controller } from 'react-hook-form';
 import { MotiView } from 'moti';
 
 import { ContainPages, Input } from '../../../components';
 import { useLogin, useShowPassword } from './hooks';
+import { login } from './functions';
 
 export const SignIn: React.FC = () => {
     const { handleShowPassword, showPassword } = useShowPassword();
-    const { control, errors } = useLogin();
+    const { control, errors, handleSubmit, isloading, setIsLoading } =
+        useLogin();
 
     return (
         <ContainPages>
@@ -22,10 +31,7 @@ export const SignIn: React.FC = () => {
                     style={{ flex: 1 }}
                     className="w-full bg-[#ffffff04] rounded-md mt-10 items-center justify-between"
                 >
-                    <MotiView
-                        from={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                    >
+                    <MotiView from={{ opacity: 0 }} animate={{ opacity: 1 }}>
                         <FontAwesome
                             name="user-circle-o"
                             color="#fff"
@@ -52,6 +58,7 @@ export const SignIn: React.FC = () => {
                                     <Input
                                         className="bg-plt-white border border-plt-yellow w-full rounded-md pl-2 text-black font-dflt-bold"
                                         placeholder="email@email.com"
+                                        autoCapitalize="none"
                                         value={value}
                                         onChangeText={onChange}
                                     />
@@ -83,6 +90,7 @@ export const SignIn: React.FC = () => {
                                     <Input
                                         className="bg-plt-white border border-plt-yellow w-full rounded-md pl-2 text-black font-dflt-bold"
                                         placeholder="Senha"
+                                        autoCapitalize="none"
                                         secureTextEntry={!showPassword}
                                         value={value}
                                         onChangeText={onChange}
@@ -113,10 +121,30 @@ export const SignIn: React.FC = () => {
                         }}
                         className="w-full"
                     >
-                        <TouchableOpacity className="bg-plt-blue w-full rounded-lg py-1 items-center">
-                            <Text className="text-plt-white font-semibold font-dflt-regular text-lg">
-                                Entrar
-                            </Text>
+                        <TouchableOpacity
+                            disabled={isloading}
+                            onPress={handleSubmit(
+                                (data) => login({ ...data, setIsLoading }),
+                                () => {
+                                    Alert.alert(
+                                        'Erro',
+                                        'Desculpe dados inválidos!'
+                                    );
+                                }
+                            )}
+                            className="bg-plt-blue w-full rounded-lg py-1 items-center"
+                        >
+                            {isloading ? (
+                                <ActivityIndicator
+                                    animating
+                                    color="#fff"
+                                    size={25}
+                                />
+                            ) : (
+                                <Text className="text-plt-white font-semibold font-dflt-regular text-lg">
+                                    Entrar
+                                </Text>
+                            )}
                         </TouchableOpacity>
                     </MotiView>
                 </View>
