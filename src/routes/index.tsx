@@ -9,6 +9,7 @@ const RoutesDeliveryIt = () => (
         className={clsx('bg-black flex-1', {
             'pt-8': Platform.OS === 'android',
         })}
+        style={{ flex: 1 }}
     >
         <NavigationContainer>
             <RoutesPublicDeliveryIt />
