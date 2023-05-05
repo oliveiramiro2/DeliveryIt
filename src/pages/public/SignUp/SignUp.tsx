@@ -12,12 +12,12 @@ export const SignUp: React.FC = () => {
 
     return (
         <ContainPages>
-            <View className="items-center">
+            <View className="items-center min-h-[82vh]">
                 <Text className="text-plt-yellow font-dflt-bold text-2xl">
                     Faça seu cadastro!
                 </Text>
                 <View className="items-center">
-                    <View className="flex flex-row items-center justify-center gap-x-5 mt-[25vh]">
+                    <View className="flex flex-row flex-1 items-center justify-center self-center mb-20 gap-x-5">
                         <MotiView
                             from={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
