@@ -1,11 +1,13 @@
 import { Alert } from 'react-native';
 import { SubmitHandler } from 'react-hook-form';
-import { auth, signInApp } from '../../../../utils';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+
+import { auth } from '../../../../utils';
 import { IDataLogin } from '../@types';
 
 export const login: SubmitHandler<IDataLogin> = ({ email, password, setIsLoading }) => {
     setIsLoading(true);
-    signInApp(auth, email, password)
+    signInWithEmailAndPassword(auth, email, password)
         .then((value) => console.log('logado', value.user.uid))
         .catch(() => {
             Alert.alert(
