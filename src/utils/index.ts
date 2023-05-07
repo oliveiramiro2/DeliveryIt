@@ -1,1 +1,1 @@
-export { signInApp, auth } from './firebaseConfig';
+export { auth, db } from './firebaseConfig';
