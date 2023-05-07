@@ -6,6 +6,8 @@ import {
     Pressable,
     Alert,
     ActivityIndicator,
+    KeyboardAvoidingView,
+    Platform,
 } from 'react-native';
 import { FontAwesome, FontAwesome5 } from '@expo/vector-icons';
 import { Controller } from 'react-hook-form';
@@ -22,7 +24,11 @@ export const SignIn: React.FC = () => {
 
     return (
         <ContainPages>
-            <View style={{ flex: 1 }} className="items-center min-h-[80vh]">
+            <KeyboardAvoidingView
+                behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+                style={{ flex: 1 }}
+                className="items-center min-h-[80vh]"
+            >
                 <Text className="text-plt-yellow font-dflt-bold text-2xl">
                     Faça seu login!
                 </Text>
@@ -148,7 +154,7 @@ export const SignIn: React.FC = () => {
                         </TouchableOpacity>
                     </MotiView>
                 </View>
-            </View>
+            </KeyboardAvoidingView>
         </ContainPages>
     );
 };
