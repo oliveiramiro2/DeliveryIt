@@ -18,7 +18,7 @@ export const StackSignUp = () => (
                 <MotiView
                     from={{ height: 0 }}
                     animate={{ height: 60 }}
-                    transition={{ delay: 400 }}
+                    delay={200}
                     className="flex flex-row justify-between items-center ml-2"
                 >
                     {/* eslint-disable-next-line */}
@@ -26,6 +26,7 @@ export const StackSignUp = () => (
                         <MotiPressable
                             from={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
+                            transition={{ type: 'timing', delay: 300, duration: 250 }}
                             /* eslint-disable-next-line */
                             onPress={() => props.navigation.goBack()}
                         >
@@ -33,7 +34,7 @@ export const StackSignUp = () => (
                         </MotiPressable>
                     )}
                     <View />
-                    <LogoHeader time={600} />
+                    <LogoHeader time={700} />
                 </MotiView>
             ),
         }}
