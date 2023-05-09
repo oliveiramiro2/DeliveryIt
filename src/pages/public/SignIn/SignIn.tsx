@@ -8,14 +8,16 @@ import {
     ActivityIndicator,
     KeyboardAvoidingView,
     Platform,
+    Image,
 } from 'react-native';
-import { FontAwesome, FontAwesome5 } from '@expo/vector-icons';
+import { FontAwesome5 } from '@expo/vector-icons';
 import { Controller } from 'react-hook-form';
 import { MotiView } from 'moti';
 
 import { ContainPages, Input } from '../../../components';
 import { useLogin, useShowPassword } from './hooks';
 import { login } from './functions';
+import { loginBanner } from '../../../constants';
 
 export const SignIn: React.FC = () => {
     const { handleShowPassword, showPassword } = useShowPassword();
@@ -37,15 +39,19 @@ export const SignIn: React.FC = () => {
                     style={{ flex: 1 }}
                     className="w-full bg-[#ffffff04] rounded-md mt-10 items-center justify-between"
                 >
-                    <MotiView from={{ opacity: 0 }} animate={{ opacity: 1 }}>
-                        <FontAwesome
-                            name="user-circle-o"
-                            color="#fff"
-                            size={80}
+                    <MotiView
+                        from={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        style={{ height: 80 }}
+                    >
+                        <Image
+                            source={loginBanner}
+                            resizeMode="contain"
+                            style={{ height: 180 }}
                         />
                     </MotiView>
                     <View className="w-full items-center relative bottom-5">
-                        <Text className="text-plt-white text-lg mb-1 self-start ml-10 font-dflt-regular">
+                        <Text className="text-plt-gray text-lg mb-1 self-start ml-10 font-dflt-regular">
                             E-mail
                         </Text>
                         <Controller
@@ -62,9 +68,10 @@ export const SignIn: React.FC = () => {
                                     className="w-5/6"
                                 >
                                     <Input
-                                        className="bg-plt-white border border-plt-yellow w-full rounded-md pl-2 text-black font-dflt-bold"
+                                        className="text-white pb-2 border-b border-plt-yellow w-full pl-2 font-dflt-bold"
                                         placeholder="email@email.com"
                                         autoCapitalize="none"
+                                        placeholderTextColor="#fff"
                                         value={value}
                                         onChangeText={onChange}
                                     />
@@ -76,7 +83,7 @@ export const SignIn: React.FC = () => {
                                 {`${errors.email?.message}`}
                             </Text>
                         )}
-                        <Text className="text-plt-white text-lg mb-1 mt-4 self-start ml-10 font-dflt-regular">
+                        <Text className="text-plt-gray text-lg mb-1 mt-4 self-start ml-10 font-dflt-regular">
                             Senha
                         </Text>
                         <Controller
@@ -94,21 +101,23 @@ export const SignIn: React.FC = () => {
                                     className="w-5/6"
                                 >
                                     <Input
-                                        className="bg-plt-white border border-plt-yellow w-full rounded-md pl-2 text-black font-dflt-bold"
+                                        className="text-white pb-2 border-b border-plt-yellow w-full pl-2 font-dflt-bold"
                                         placeholder="Senha"
                                         autoCapitalize="none"
                                         secureTextEntry={!showPassword}
+                                        placeholderTextColor="#fff"
                                         value={value}
                                         onChangeText={onChange}
                                     />
                                 </MotiView>
                             )}
                         />
-                        <View className="relative left-[36%] bottom-[26px]">
+                        <View className="relative left-[36%] bottom-[32px]">
                             <Pressable onPress={handleShowPassword}>
                                 <FontAwesome5
                                     name={showPassword ? 'eye-slash' : 'eye'}
                                     size={22}
+                                    color="#fff"
                                 />
                             </Pressable>
                         </View>
