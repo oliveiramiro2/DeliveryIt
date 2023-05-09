@@ -20,13 +20,14 @@ export const Input: React.FC<IPropsInput> = ({
     className,
     defaultValue,
     testID,
+    placeholderTextColor,
 }) => {
     if (mask) {
         return (
             <TextInputMask
                 className={className !== undefined ? className : ''}
                 testID={testID}
-                placeholderTextColor="#407f8a"
+                placeholderTextColor={placeholderTextColor}
                 autoCapitalize={autoCapitalize}
                 textAlign={textAlign}
                 placeholder={placeholder}
@@ -52,7 +53,7 @@ export const Input: React.FC<IPropsInput> = ({
             <TextInputMask
                 className={className !== undefined ? className : ''}
                 testID={testID}
-                placeholderTextColor="#407f8a"
+                placeholderTextColor={placeholderTextColor}
                 autoCapitalize={autoCapitalize}
                 textAlign={textAlign}
                 placeholder={placeholder}
@@ -78,7 +79,7 @@ export const Input: React.FC<IPropsInput> = ({
             <TextInputMask
                 className={className !== undefined ? className : ''}
                 testID={testID}
-                placeholderTextColor="#407f8a"
+                placeholderTextColor={placeholderTextColor}
                 autoCapitalize={autoCapitalize}
                 textAlign={textAlign}
                 placeholder={placeholder}
@@ -103,7 +104,7 @@ export const Input: React.FC<IPropsInput> = ({
         <TextInput
             className={className !== undefined ? className : ''}
             testID={testID}
-            placeholderTextColor="#407f8a"
+            placeholderTextColor={placeholderTextColor}
             autoCapitalize={autoCapitalize}
             textAlign={textAlign}
             placeholder={placeholder}

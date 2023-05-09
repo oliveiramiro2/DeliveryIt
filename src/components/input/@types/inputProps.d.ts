@@ -20,4 +20,5 @@ export interface IPropsInput {
     className?: string;
     defaultValue?: string;
     testID?: string;
+    placeholderTextColor: '#fff' | '#000';
 }
