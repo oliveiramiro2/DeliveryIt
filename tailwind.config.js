@@ -9,6 +9,7 @@ module.exports = {
                 'plt-black': '#190506',
                 'plt-orange': '#EB5432',
                 'plt-white': '#EAF2F0',
+                'plt-gray': '#ccc',
             },
             fontFamily: {
                 'dflt-regular': 'Rufina_400Regular',
