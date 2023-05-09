@@ -6,11 +6,19 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { auth } from '../../../../utils';
 import { IDataLogin } from '../@types';
 
-export const login: SubmitHandler<IDataLogin> = ({ email, password, setIsLoading }) => {
+export const login: SubmitHandler<IDataLogin> = ({
+    email,
+    password,
+    setIsLoading,
+    setLogined,
+    setUid,
+}) => {
     setIsLoading(true);
     signInWithEmailAndPassword(auth, email, password)
         .then(async (value) => {
             await AsyncStorage.setItem('uid', value.user.uid);
+            setLogined(true);
+            setUid(value.user.uid);
         })
         .catch(() => {
             Alert.alert(
