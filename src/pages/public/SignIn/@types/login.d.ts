@@ -6,4 +6,6 @@ export interface IDataLogin {
     email: string;
     password: string;
     setIsLoading: Function;
+    setLogined: Function;
+    setUid: Function;
 }
