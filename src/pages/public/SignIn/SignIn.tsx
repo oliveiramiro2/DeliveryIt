@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {
     View,
     Text,
@@ -18,11 +18,13 @@ import { ContainPages, Input } from '../../../components';
 import { useLogin, useShowPassword } from './hooks';
 import { login } from './functions';
 import { loginBanner } from '../../../constants';
+import { AuthContext } from '../../../contexts/auth';
 
 export const SignIn: React.FC = () => {
     const { handleShowPassword, showPassword } = useShowPassword();
     const { control, errors, handleSubmit, isloading, setIsLoading } =
         useLogin();
+    const { setLogined, setUid } = useContext(AuthContext);
 
     return (
         <ContainPages>
@@ -139,7 +141,13 @@ export const SignIn: React.FC = () => {
                         <TouchableOpacity
                             disabled={isloading}
                             onPress={handleSubmit(
-                                (data) => login({ ...data, setIsLoading }),
+                                (data) =>
+                                    login({
+                                        ...data,
+                                        setIsLoading,
+                                        setLogined,
+                                        setUid,
+                                    }),
                                 () => {
                                     Alert.alert(
                                         'Erro',
