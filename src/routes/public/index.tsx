@@ -32,6 +32,7 @@ const RoutesPublicDeliveryIt = () => (
                 >
                     <View />
                     <LogoHeader />
+                    <View />
                 </MotiView>
             ),
         }}
