@@ -22,19 +22,26 @@ export const StackSignUp = () => (
                     className="flex flex-row justify-between items-center ml-2"
                 >
                     {/* eslint-disable-next-line */}
-                    {props.back !== undefined && (
+                    {props.back !== undefined ? (
                         <MotiPressable
                             from={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
-                            transition={{ type: 'timing', delay: 300, duration: 250 }}
+                            transition={{
+                                type: 'timing',
+                                delay: 300,
+                                duration: 250,
+                            }}
+                            style={{ position: 'absolute', bottom: -15 }}
                             /* eslint-disable-next-line */
                             onPress={() => props.navigation.goBack()}
                         >
                             <Ionicons name="arrow-back" size={28} />
                         </MotiPressable>
+                    ) : (
+                        <View />
                     )}
-                    <View />
                     <LogoHeader time={700} />
+                    <View />
                 </MotiView>
             ),
         }}
