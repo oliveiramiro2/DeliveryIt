@@ -1,13 +1,13 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 
-import { ContainPages } from '../../../../components';
+import { ContainPages } from '../../../../../components';
 
-export const Consumer: React.FC = () => (
+export const Business: React.FC = () => (
     <ContainPages>
-        <View className="items-center min-h-[82vh]">
+        <View style={{ flex: 1 }} className="items-center min-h-[82vh]">
             <Text className="text-plt-yellow font-dflt-bold text-2xl">
-                Cadastre-se para comprar!
+                Cadastre sua empresa!
             </Text>
         </View>
     </ContainPages>
