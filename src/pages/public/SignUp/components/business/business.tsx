@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text } from 'react-native';
 
 import { ContainPages } from '../../../../../components';
+import { Form } from '..';
 
 export const Business: React.FC = () => (
     <ContainPages>
@@ -9,6 +10,7 @@ export const Business: React.FC = () => (
             <Text className="text-plt-yellow font-dflt-bold text-2xl">
                 Cadastre sua empresa!
             </Text>
+            <Form />
         </View>
     </ContainPages>
 );
