@@ -1,2 +1,2 @@
-export { Business } from './business';
-export { Consumer } from './consumer';
+export { Business } from './business/business';
+export { Consumer } from './costumer/costumer';
